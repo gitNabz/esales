@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} utilisateur {% endblock %}
+
+{# app/Resources/views/users/index.html.twig #}
+
+{% block stylesheets %}
+<style>
+	body {
+		background-color: #005831;
+	}
+</style>
+{% endblock %}
+
+{% block body %}
+
+	{{ user.firstname }} {{ user.lastname }}
+{% endblock %}
