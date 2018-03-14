@@ -4,10 +4,28 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+                {# Chargements des fichiers css #}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <h1>Layout de la page</h1>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                    <li><a href="{{ path('testpage') }}">Test</a></li>
+                    <li><a href="{{ path('hello', {'name' : 'Toto', 'age' : 20}) }}">Hello</a></li>
+                    <li><a href="{{ path('users.index') }}">Liste des utilisateurs</a></li>
+                </ul>
+            </nav>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla modi odio reiciendis, error magnam quasi expedita veritatis porro! Minima ipsam, itaque modi esse repellat amet fugiat quasi facere delectus impedit.</p>
+
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>
